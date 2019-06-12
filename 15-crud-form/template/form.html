@@ -1,0 +1,34 @@
+<!-- form.html -->
+{% extends 'layout.html' %}
+
+{% block title%} Form page Zein {% endblock %}
+
+{% block content %}
+<!-- <form method="POST"> 
+    <label>No Induk </label><input name="no_induk" type="text"/></br></br>
+    <label>Nama </label><input name="nama" type="text"/></br></br>
+    <label>Alamat </label><input name="alamat" type="text"/></br></br>
+    <input type="submit" value="simpan">
+</form> -->
+
+<form method="POST">
+    <table>
+        <tr>
+            <td><label>No Induk</label></td>
+            <td><input type="text" name="no_induk"/></td>
+        </tr>
+        <tr>
+            <td><label>Nama</label></td>
+            <td><input name="nama" type="text"/></td>
+        </tr>
+        <tr>
+            <td><label>Alamat</label></td>
+            <td><input name="alamat" type="text"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Simpan"/></td>
+        </tr>
+    </table>
+</form>
+{% endblock %}
