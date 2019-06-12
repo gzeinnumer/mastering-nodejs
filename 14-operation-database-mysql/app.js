@@ -69,14 +69,22 @@ router.addRoute('/update', function(req, res){
     ], function(err, field){
         if(err) throw err;
         res.writeHead(200, {"Content-Type" : "text/plain"});
-        res.end(field.affectedRows);
+        res.end(field.changedRows+" baris diupdate");
     });
 });
 
 //delete
 router.addRoute('/delete', function(req, res){
-    res.writeHead(200, {"Content-Type" : "text/plain"});
-    res.end("Hello delete");
+    // res.writeHead(200, {"Content-Type" : "text/plain"});
+    // res.end("Hello delete");
+
+    conn.query("DELETE FROM mahasiswa where ?",{
+        no_induk : "0823858040"
+    }, function(err, field){
+        if(err) throw err;
+        res.writeHead(200, {"Content-Type" : "text/plain"});
+        res.end(field.affectedRows + "baris dihapus.");
+    });
 });
 
 http.createServer(function(req, res){
